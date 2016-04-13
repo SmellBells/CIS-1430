@@ -1,0 +1,94 @@
+<html>
+   <head>
+      <title> My Game </title>
+	  <script language="javascript">
+	  
+	    var position = 0
+		function Init()
+		{
+		    position=Math.random();
+			position=position * 3;
+			position=Math.floor(position)
+			position=position + 1;
+            document.pic1.src="card.jpg";	
+            document.pic2.src="card.jpg";	
+            document.pic3.src="card.jpg";				
+		}
+		
+		
+		
+		
+	    function CheckGuess(guess)
+		{
+	
+		 		 
+		    if (guess == position)
+		    {
+			
+			   switch (position) {
+			   case 1:
+			      document.pic1.src="ace.gif";
+				  document.pic2.src="King.jpg";
+				  document.pic2.width="147";
+				  document.pic3.src="queen.png";
+				  document.pic3.width="135";
+				  break;
+				  
+			   case 2:
+			      document.pic1.src="King.jpg";
+				  document.pic1.width="147";
+				  document.pic2.src="ace.gif";
+				  document.pic3.src="queen.png";
+				  document.pic3.width="135";
+				  break;
+				  
+			   case 3:
+			      document.pic1.src="queen.png";
+				  document.pic1.width="135";
+				  document.pic2.src="King.jpg";
+				  document.pic2.width="147";
+				  document.pic3.src="ace.gif";
+				  break;
+							  
+			   }
+			   
+			   
+			   
+		       alert("You Win!");  
+		   }
+		   else 
+		    {
+		       
+		       
+				   
+		        if (position == 1)
+			   {
+		           document.pic1.src="ace.gif";
+		       }
+		   
+		       if (position == 2)
+		       {
+		           document.pic2.src="ace.gif";
+		       }
+		   
+		       if (position == 3)
+		      {
+		          document.pic3.src="ace.gif";
+		      }
+			  alert("Wrong Nub");
+		    }
+			
+			Init();
+		} // CheckGuess   
+	  </script>
+   </head>
+   <body onload="Init()">
+      <h1> 3 Card Marky </h1>
+	  
+	  <img src="card.jpg" onclick="CheckGuess(1)" name="pic1"> 
+	  <img src="card.jpg" onclick="CheckGuess(2)" name="pic2"> 
+	  <img src="card.jpg" onclick="CheckGuess(3)" name="pic3"> 
+	  
+   </body>
+</html>
+   
